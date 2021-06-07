@@ -1,0 +1,139 @@
+@mixin flex($align,$justify,$direction){
+    display:flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction
+}
+
+$huge:5rem;
+$small:1.5rem;
+$text:2rem;
+$headline:2.5rem;
+$medium:3rem;
+$gray-text:#989EA6;
+
+
+@import "global";
+@import "nav";
+@import "intro";
+@import "posts";
+@import "footer";
+
+@media screen and (max-width:1024px){
+
+    html{
+        font-size: 70%;
+    }
+
+    .main-header{
+        .main-nav{
+            .logo{
+                h1{
+                    font-size: $medium;
+                }
+            }
+            .hover-nav{
+                display: none;
+            }
+
+            .menu-bars{
+                display: block;
+                font-size: $text;
+                span{
+                    cursor: pointer;
+
+                }
+            }
+
+            .mobile-menu{
+                @include flex(center,center,column);
+                display: block;
+                position: fixed;
+                background: wheat;
+                height:100%;
+                width: 50%;
+                top:0;
+                left:100%;
+                z-index: 2;
+                .exit{
+                    @include flex(center,flex-end,row);
+                    min-height:20vh;
+                    margin: 0rem 5rem;
+                    .x{
+                        font-size:$medium;
+                        cursor: pointer;
+                    }
+                }
+                .mobile-nav{
+                    @include flex(center,center,column);
+                    min-height:50vh;
+                    li{
+                        margin: 2rem;
+                    }
+                }
+
+                .icon-links{
+                    li{
+                        font-size: 4rem;
+                    }
+                }
+            }
+        }
+    }
+    .open-menu{
+        transform: translate(-100%);
+        transition: all 0.2s ease;
+    }
+    /* Intro */
+    .intro-container{
+        @include flex(center,center,column);
+        width: 100%;
+        position: none;
+        .overlay{
+            display: none;
+        }
+        .intro-text{
+            position: static;
+            width: 80%;
+            margin: auto
+        }
+
+        
+    }
+    .to-top{
+            display: none;
+        }
+    .social-icons{
+        display: none;
+    }
+
+    /* Posts */
+    .post{
+        @include flex(center,center,column);
+        .post-img{
+            background: none;
+            img{
+                margin-bottom:0;
+            }
+        }
+        .post-description{
+            padding:3rem;
+            margin:0;
+        }
+    }
+
+    /* footer */
+    footer{
+        width:100%;
+    }
+}
+
+@media screen and (max-width:501px){
+    html{
+        font-size: 50%;
+    }
+
+    #posts{
+        width: 95%;
+    }
+}

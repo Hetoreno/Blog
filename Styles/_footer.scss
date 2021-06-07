@@ -1,0 +1,10 @@
+footer{
+    @include flex(center,center,row);
+    border-top: 2px solid #d3d3d3;
+    width:80%;
+    margin: auto;
+    p{
+        font-size: $text;
+        padding: 5rem;
+    }
+}

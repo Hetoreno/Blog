@@ -1,0 +1,49 @@
+.main-header{
+    background: white;
+    
+    .main-nav{
+        @include flex(center,space-between,row);
+        width:80%;
+        margin: auto;
+        min-height:10vh;
+        .logo{
+            font-size: $medium;
+        }
+        
+        ul{
+            @include flex(center,center,row);
+            li{
+                margin:0rem 1.5rem;
+                font-size:$text;
+            }
+
+            li:hover{
+                opacity: 0.50;
+                transition: all 0.2s ease-in-out;
+            }
+
+            a{
+                color:black;
+                font-weight: bold;
+            }
+
+        }
+
+        .menu-bars{
+            display: none;
+        }
+        .mobile-menu{
+            display: none;
+        }
+    }   
+
+    
+    
+
+}
+/* .main-header.active{
+        position: fixed;
+    @include flex(center,center,row);
+    width: 100%;
+    z-index: 1;
+    } */

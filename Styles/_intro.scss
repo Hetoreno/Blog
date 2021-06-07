@@ -1,0 +1,108 @@
+
+#intro{
+    min-height:90vh;
+    @include flex(center,center,row);
+}
+
+.intro-container{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 120%), url(/IMGS/pexels-ken-tomita-389819.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:80%;
+    min-height:70vh;
+    position: relative;
+
+    .overlay{
+        background: black;
+        min-height:70vh;
+        width:100%;
+        opacity: 0;
+    }
+
+    .overlay:hover{
+        transition: all 0.5s ease;
+        opacity: 0.20;
+    }
+    
+    .intro-text{
+        @include flex(flex-start,center,column);
+        width:50%;
+        color:white;
+        position: absolute;
+        top: 60%;
+        left:5%;
+        h2{
+            padding:1rem;
+            background: black;
+            font-size: $huge;
+        }
+        p{
+            background: black;
+            line-height: 1.8;
+            margin-top: 2rem;
+            padding:1rem;
+            font-size:$text;
+        }
+    }
+
+
+
+}
+.social-icons{
+    @include flex(center,center,column);
+    position: fixed;
+    left:3%;
+    top:auto;
+    font-size: $huge;
+    li{
+        margin: 1rem 0rem;
+        a{
+            color:#6F6F6F;
+        }
+        a:hover{
+            transition: all 0.5s ease;
+            color: black;
+        }
+    }
+    li:hover{
+        transform: translateY(-5%);
+        transition: ease all 0.5s;
+    }
+    
+}
+
+.social-icons::before{
+    content:'';
+    display: block;
+    width:2px;
+    height:15vh;
+    background:#7D7D7D;
+}
+
+.social-icons::after{
+    content:'';
+    display: block;
+    width:2px;
+    height:15vh;
+    background:#7D7D7D;
+}
+
+.to-top{
+    opacity: 0;
+    position: fixed;
+    bottom: 3rem;
+    right: 2rem;
+    width: 5rem;
+    font-size: $huge;
+    color: black;
+}
+
+.to-top.active{
+    transition: all 0.8s ease;
+    opacity: 1;
+}
+
+.to-top:hover{
+    transform: translateY(-25%);
+}
