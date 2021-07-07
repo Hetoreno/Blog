@@ -112,9 +112,7 @@ $gray-text:#989EA6;
         @include flex(center,center,column);
         .post-img{
             background: none;
-            img{
-                margin-bottom:0;
-            }
+            
         }
         .post-description{
             padding:3rem;
