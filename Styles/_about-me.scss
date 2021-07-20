@@ -1,0 +1,58 @@
+#about-me{
+    @include flex(center,center,column);
+    .about-container{
+        @include flex(center,center,row);
+        width:80%;
+        margin: auto;
+        padding:6rem 0rem;
+        min-height:70vh;
+        .about-img{
+            flex:1 1 20rem;
+            img{
+                height:100%;
+                width:80%;
+                object-fit: cover;
+            }
+        }
+        .about-description{
+            @include flex(flex-start, center,column);
+            flex:3 1 20rem;
+            h4{
+                font-size: 4rem;
+            }
+            p{
+                font-size:$headline;
+                margin:4rem 0rem;
+                line-height: 5rem;
+            }
+            .about-links{
+            @include flex(center,center,row);
+            a{
+                font-size: $medium;
+                color:black;
+                margin: 0rem 1rem;
+            }
+            a:hover{
+                opacity: 0.50;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+    }
+
+    .go-back{
+        @include flex (center,center,row);
+        font-size: $text;
+        color:black;
+        border:3px solid black;
+        width:15%;
+        margin: 3rem;
+        border-radius: 1rem;
+        padding: 2rem;
+    }
+
+    .go-back:hover{
+        transition: all 0.3s ease;
+        background:rgb(221, 221, 221);
+    }
+}

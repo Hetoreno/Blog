@@ -18,12 +18,9 @@ $gray-text:#989EA6;
 @import "intro";
 @import "posts";
 @import "footer";
+@import "about-me";
 
 @media screen and (max-width:1024px){
-
-    html{
-        font-size: 70%;
-    }
 
     .main-header{
         .main-nav{
@@ -120,18 +117,50 @@ $gray-text:#989EA6;
         }
     }
 
+    /* About Me */
+    #about-me{
+        .about-container{
+            .about-img{
+                flex:1 1 30rem;
+            }
+        }
+        .go-back{
+            width:25%;
+        }
+    }
+
     /* footer */
     footer{
         width:100%;
     }
 }
 
-@media screen and (max-width:501px){
+@media screen and (max-width:550px){
     html{
         font-size: 50%;
     }
 
     #posts{
         width: 95%;
+    }
+
+    #about-me{
+        .about-container{
+            @include flex(flex-start,center,column-reverse);
+            .about-img{
+                flex:1 1 30rem;
+                img{
+                    width:100%;
+                }
+            }
+            .about-description{
+                p{
+                    margin:3rem 0rem;
+                }
+            }
+        }
+        .go-back{
+            width:40%;
+        }
     }
 }
